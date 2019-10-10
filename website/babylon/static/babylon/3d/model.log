@@ -1,0 +1,68 @@
+Exporter version: 6.2.0, Blender version: 2.80 (sub 75)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		texture directory   :  /Users/MaxYinGonG/Desktop/
+	Python World class constructor completed
+	processing begun of skeleton:  Armature, id:  0
+		processing begun of bone:  Bone, index:  0
+		processing action ArmatureAction:  in[1 - 60], out[0 - 60]
+		processing action ArmatureAction.001:  in[12 - 13], out[70 - 83]
+		processing action ArmatureAction.002:  in[0 - 1], out[90 - 91]
+		processing action ArmatureAction.003:  in[0 - 1], out[100 - 101]
+		processing action ArmatureAction.004:  in[11 - 12], out[110 - 122]
+		processing action ArmatureAction.005:  in[0 - 1], out[130 - 131]
+		processing action ArmatureAction.006:  in[0 - 1], out[140 - 141]
+		processing action ArmatureAction.007:  in[0 - 1], out[150 - 151]
+		processing action ArmatureAction.008:  in[0 - 1], out[160 - 161]
+		processing action ArmatureAction.009:  in[1 - 60], out[170 - 230]
+		processing action ArmatureAction.010:  in[0 - 1], out[240 - 241]
+		processing action ArmatureAction.011:  in[1 - 60], out[250 - 310]
+	processing begun of camera (UniversalCamera):  Camera
+	processing begun of mesh:  SketchUp
+		processing begun of material:  material.002
+		num positions      :  101
+		num normals        :  101
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  231
+	processing begun of mesh:  SketchUp.001
+		processing begun of material:  Translucent_Glass_Blue.002
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  12
+		Skeleton stats:  
+			Total Influencers:  8
+			Avg # of influencers per vertex:  1
+			Highest # of influencers observed:  1, num vertices with this:  8
+			exported as 1 influencers
+			num skeletonWeights and skeletonIndices:  32
+	processing begun of mesh:  SketchUp.002
+		processing begun of material:  Translucent_Glass_Blue.002
+		registered as also a user of material:  Translucent_Glass_Blue.002
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  12
+========= Writing of JSON file started =========
+	writing mesh:  SketchUp
+	writing mesh:  SketchUp.001
+	writing mesh:  SketchUp.002
+========= Writing of JSON file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.1047 secs

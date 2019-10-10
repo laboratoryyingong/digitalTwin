@@ -1,0 +1,1 @@
+# please provide bones weight when export to babylon 

@@ -1,40 +1,42 @@
 (function () {
+
     var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
-    var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+    var engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
 
-    BABYLON.SceneLoader.Load("../static/babylon/3d/", "model.glb", engine, function (scene) {
+    var scene = new BABYLON.Scene(engine);
 
-        window.scene = scene;
 
-        // Add a camera to the scene and attach it to the canvas
-        var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 8, new BABYLON.Vector3(0, 0, 0), scene);
-        // Prevent zooming by setting the lower and upper radius boundaries to the current radius.
-        camera.lowerRadiusLimit = 4;
-        camera.upperRadiusLimit = 8;
 
-        camera.setPosition(new BABYLON.Vector3(-5.556027775071264, 2.9328191096773466, 1.5707382595727126));
+    BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", "model.babylon", scene, function (meshes, particle, skeletons) {
+
+
+
+        var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
+        var camera = new BABYLON.ArcRotateCamera("Camera", 10, 10, -10, new BABYLON.Vector3.Zero(), scene);
         camera.attachControl(canvas, true);
 
-        scene.activeCamera.alpha += .0001;
+        var dude = meshes[0];
 
-        var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
+        dude.rotation.y = Math.PI;
+        dude.position = new BABYLON.Vector3(0, 0, -80);
 
-        // Register a render loop to repeatedly render the scene
-        engine.runRenderLoop(function () {
-            scene.render();
-        });
+        // scene.beginAnimation(skeletons[0], 0, 60, true, 2.0); 
 
-        // Watch for browser/canvas resize events
-        window.addEventListener("resize", function () {
-            engine.resize();
-        });
+        console.log(meshes)
+        console.log(particle)
+        console.log(skeletons)
 
-        scene.onPointerObservable.add(function (evt) {
-
-            console.log(evt.pickInfo.pickedMesh);
-
-        }, BABYLON.PointerEventTypes.POINTERUP);
+        scene.render();
 
     });
+
+
+
+    // Resize
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
+
+
 
 })();

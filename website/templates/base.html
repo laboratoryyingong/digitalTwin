@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Babylon Template</title>
+
+    <title>Babylon.js sample code</title>
+
+    <!-- Babylon.js -->
+    <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+    <script src="https://preview.babylonjs.com/ammo.js"></script>
+    <script src="https://preview.babylonjs.com/cannon.js"></script>
+    <script src="https://preview.babylonjs.com/Oimo.js"></script>
+    <script src="https://preview.babylonjs.com/gltf_validator.js"></script>
+    <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+    <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+    <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+    <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
 
     <style>
         html,
@@ -22,20 +39,53 @@
             touch-action: none;
         }
     </style>
-    <script src="https://preview.babylonjs.com/babylon.js"></script>
-    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
 
-    <canvas id="renderCanvas" touch-action="none"></canvas> //touch-action="none" for best results from PEP
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
 
-    {% load static %}
-    <script src="{% static 'babylon/js/index.js' %}"></script>
+            var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(-Math.cos(Math.PI/6), 1 , -Math.sin(Math.PI/6)), new BABYLON.Vector3(0, -1, 0), Math.PI / 2, 1.5, scene);
+            var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, new BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, true);
 
+
+            BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", "model.babylon", scene, function (meshes, particle, skeletons) {
+
+                var idleAnim = scene.beginWeightedAnimation(skeletons[0], 0, 30, 1.0, true);
+                // var runAnim = scene.beginWeightedAnimation(skeletons[1], 1, 60, 1.0, true);
+                console.log(meshes)
+                console.log(particle)
+                console.log(skeletons)
+
+            });
+
+            return scene;
+        }
+
+        __createScene = createScene;
+
+        var engine = new BABYLON.Engine(canvas, true, {
+            preserveDrawingBuffer: true,
+            stencil: true
+        });
+        var scene = createScene();
+
+        engine.runRenderLoop(function () {
+            if (scene) {
+                scene.render();
+            }
+        });
+
+        // Resize
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
 </body>
 
 </html>
