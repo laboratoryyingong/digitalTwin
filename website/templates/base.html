@@ -4,24 +4,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Babylon.js sample code</title>
+    <title>Digital Twin</title>
 
-    <!-- Babylon.js -->
-    <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
-    <script src="https://preview.babylonjs.com/ammo.js"></script>
-    <script src="https://preview.babylonjs.com/cannon.js"></script>
-    <script src="https://preview.babylonjs.com/Oimo.js"></script>
-    <script src="https://preview.babylonjs.com/gltf_validator.js"></script>
-    <script src="https://preview.babylonjs.com/earcut.min.js"></script>
-    <script src="https://preview.babylonjs.com/babylon.js"></script>
-    <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
-    <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
-    <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
-    <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
-    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-    <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
-    <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../static/babylon/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../static/babylon/demo/demo.css" rel="stylesheet" />
+
+    <link href="../static/babylon/css/jke-d3-ecg.css" rel="stylesheet" />
 
     <style>
         html,
@@ -38,54 +32,912 @@
             height: 100%;
             touch-action: none;
         }
+
+        #c {
+            background:
+                -webkit-linear-gradient(left, black 0%, white 100%),
+                -webkit-linear-gradient(left, black 0%, red 100%),
+                -webkit-linear-gradient(left, black 0%, lime 100%),
+                -webkit-linear-gradient(left, black 0%, #07f 100%);
+            background-size:
+                100% 25%;
+            background-position-x: 0;
+            background-position-y:
+                0,
+                33%,
+                66%,
+                100%;
+            background-repeat: repeat-x;
+            -webkit-animation-name: linemove;
+            -webkit-animation-duration: 5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes linemove {
+            from {
+                background-position-x: 0;
+            }
+
+            to {
+                background-position-x:
+                    480px,
+                    480px,
+                    480px,
+                    480px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <canvas id="renderCanvas"></canvas>
-    <script>
-        var canvas = document.getElementById("renderCanvas");
 
-        var createScene = function () {
-            var scene = new BABYLON.Scene(engine);
+    <div class="wrapper " style="overflow: auto;">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+        
+                Tip 2: you can also add an image using data-image tag
+            -->
+            <div class="logo">
+                <a class="simple-text logo-normal">
+                    DigitalTwin Demo
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="/babylon">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="notification">5</span>
+                                    <p class="d-lg-none d-md-block">
+                                        Some Actions
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                                    <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                                    <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                                    <a class="dropdown-item" href="#">Another Notification</a>
+                                    <a class="dropdown-item" href="#">Another One</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-warning card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">aspect_ratio</i>
+                                    </div>
+                                    <p class="card-category">Indoor humidity</p>
+                                    <h3 class="card-title">
+                                        <span>50</span>
+                                        <small>%</small>
+                                        <span> - </span>
+                                        <span>69</span>
+                                        <small>%</small>
+                                    </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">autorenew </i>Updated 1 minute ago ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-success card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">ac_unit</i>
+                                    </div>
+                                    <p class="card-category">Indoor Temperature</p>
+                                    <h3 class="card-title">15.2°C</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">date_range</i> Check every minute...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-danger card-header-icon">
+                                    <div class="card-icon">
+                                            <i class="material-icons">directions_walk</i>
+                                    </div>
+                                    <p class="card-category">Indoor visitor number</p>
+                                    <h3 class="card-title">75</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">date_range</i> Check every minute...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-info card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="fa fa-twitter"></i>
+                                    </div>
+                                    <p class="card-category">Followers</p>
+                                    <h3 class="card-title">+245</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">update</i> Just Updated
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header card-header-success">
+                                    <div class="ct-chart" id="dailySalesChart"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Visitor count</h4>
+                                    <p class="card-category">
+                                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span>
+                                        increase in today.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header card-header-warning" >
+                                    <!-- <div class="ct-chart" id="websiteViewsChart"></div> -->
+                                    <!-- <canvas id="c" width="auto" height="250"></canvas> -->
+                                    <div class="jke-ecgChart"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Cardiogram</h4>
+                                    <p class="card-category">
+                                        <span class="text-warning"><i class="fa fa-long-arrow-down"></i> 5% </span>
+                                        increase in last minute.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> Update one second ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(-Math.cos(Math.PI/6), 1 , -Math.sin(Math.PI/6)), new BABYLON.Vector3(0, -1, 0), Math.PI / 2, 1.5, scene);
-            var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, new BABYLON.Vector3.Zero(), scene);
-            camera.attachControl(canvas, true);
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-header-tabs card-header-primary">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="nav-tabs-title">Tasks:</span>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="#profile" data-toggle="tab">
+                                                        <i class="material-icons">bug_report</i> Bugs
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#messages" data-toggle="tab">
+                                                        <i class="material-icons">code</i> Website
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#settings" data-toggle="tab">
+                                                        <i class="material-icons">cloud</i> Server
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="profile">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" checked>
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Sign contract for "What are conference organizers afraid
+                                                            of?"</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Lines From Great Russian Literature? Or E-mails From My
+                                                            Boss?</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Flooded: One year later, assessing what was lost and what
+                                                            was found when a ravaging rain swept through metro Detroit
+                                                        </td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" checked>
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Create 4 Invisible User Experiences you Never Knew About
+                                                        </td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane" id="messages">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" checked>
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Flooded: One year later, assessing what was lost and what
+                                                            was found when a ravaging rain swept through metro Detroit
+                                                        </td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Sign contract for "What are conference organizers afraid
+                                                            of?"</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane" id="settings">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="">
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Lines From Great Russian Literature? Or E-mails From My
+                                                            Boss?</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" checked>
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Flooded: One year later, assessing what was lost and what
+                                                            was found when a ravaging rain swept through metro Detroit
+                                                        </td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" checked>
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>Sign contract for "What are conference organizers afraid
+                                                            of?"</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                                class="btn btn-primary btn-link btn-sm">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="Remove"
+                                                                class="btn btn-danger btn-link btn-sm">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-tabs card-header-primary">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="nav-tabs-title">Monitor:</span>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#settings" data-toggle="tab">
+                                                        <i class="material-icons">cloud</i> Digital Twin Main
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="settings">
+                                            <canvas id="renderCanvas"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-warning">
+                                    <h4 class="card-title">Equipment Status</h4>
+                                    <p class="card-category">15th September, 2016</p>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Salary</th>
+                                            <th>Country</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Dakota Rice</td>
+                                                <td>$36,738</td>
+                                                <td>Niger</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Minerva Hooper</td>
+                                                <td>$23,789</td>
+                                                <td>Curaçao</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sage Rodriguez</td>
+                                                <td>$56,142</td>
+                                                <td>Netherlands</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Philip Chaney</td>
+                                                <td>$38,735</td>
+                                                <td>Korea, South</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="../static/babylon/js/core/jquery.min.js"></script>
+<script src="../static/babylon/js/core/popper.min.js"></script>
+<script src="../static/babylon/js/core/bootstrap-material-design.min.js"></script>
+<script src="../static/babylon/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+<!-- Chartist JS -->
+<script src="../static/babylon/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../static/babylon/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../static/babylon/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+
+<!-- Babylon.js -->
+<script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+<script src="https://preview.babylonjs.com/ammo.js"></script>
+<script src="https://preview.babylonjs.com/cannon.js"></script>
+<script src="https://preview.babylonjs.com/Oimo.js"></script>
+<script src="https://preview.babylonjs.com/gltf_validator.js"></script>
+<script src="https://preview.babylonjs.com/earcut.min.js"></script>
+<script src="https://preview.babylonjs.com/babylon.js"></script>
+<script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+<script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+<script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+<script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+<script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+<script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+<script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
 
 
-            BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", "model.babylon", scene, function (meshes, particle, skeletons) {
+<script>
+document.getElementById( "renderCanvas" ).onwheel = function(event){
+    event.preventDefault();
+};
 
-                var idleAnim = scene.beginWeightedAnimation(skeletons[0], 0, 30, 1.0, true);
-                // var runAnim = scene.beginWeightedAnimation(skeletons[1], 1, 60, 1.0, true);
-                console.log(meshes)
-                console.log(particle)
-                console.log(skeletons)
+document.getElementById( "renderCanvas" ).onmousewheel = function(event){
+    event.preventDefault();
+};
+</script>
+<script>
+    var canvas = document.getElementById("renderCanvas");
 
-            });
+    var createScene = function () {
+        var scene = new BABYLON.Scene(engine);
+        scene.clearColor = new BABYLON.Color3(255, 255, 255);
 
-            return scene;
+        var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
+
+        // var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(-Math.cos(Math.PI/6), 1 , -Math.sin(Math.PI/6)), new BABYLON.Vector3(0, -1, 0), Math.PI / 2, 1.5, scene);
+        var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 3, Math.PI / 3, 12, BABYLON.Vector3.Zero(),
+            scene);
+        camera.attachControl(canvas, true);
+        camera.wheelDeltaPercentage = 0.001;
+
+        window.camera = camera
+
+
+        BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", "model.babylon", scene, function (meshes,
+            particle, skeletons) {
+
+            // scene.beginWeightedAnimation(skeletons[0], 1, 120, 1, true);
+            // scene.beginWeightedAnimation(skeletons[0], 130, 250, 1, true);
+            // scene.beginWeightedAnimation(skeletons[0], 260, 380, 1, true);
+
+            console.log(meshes)
+            console.log(particle)
+            console.log(skeletons)
+
+
+            // Create the 3D UI manager
+            var anchor = new BABYLON.TransformNode();
+            var manager = new BABYLON.GUI.GUI3DManager(scene);
+
+            var panel = new BABYLON.GUI.PlanePanel();
+            panel.margin = 0.2;
+            panel.columns = 2;
+
+            manager.addControl(panel);
+            panel.linkToTransformNode(anchor);
+
+            // Let's add some buttons!
+
+            // add rotate screen button
+
+            var addScreenLeftButton = function (scene) {
+                var button = new BABYLON.GUI.HolographicButton("reset");
+                panel.addControl(button);
+
+                button.text = "Monitor (Left)";
+                button.imageUrl = "../static/babylon/image/monitor.png";
+                button.onPointerUpObservable.add(function () {
+                    scene.beginWeightedAnimation(skeletons[0], 130, 180, 1, false);
+                });
+            }
+
+            var addScreenRightButton = function (scene) {
+                var button = new BABYLON.GUI.HolographicButton("reset");
+                panel.addControl(button);
+
+                button.text = "Monitor (Right)";
+                button.imageUrl = "../static/babylon/image/monitor.png";
+                button.onPointerUpObservable.add(function () {
+                    scene.beginWeightedAnimation(skeletons[0], 180, 250, 1, false);
+                });
+            }
+
+            var addBedDownButton = function (scene) {
+                var button = new BABYLON.GUI.HolographicButton("reset");
+                panel.addControl(button);
+
+                button.text = "Bed (Down)";
+                button.imageUrl = "../static/babylon/image/bed.png";
+                button.onPointerUpObservable.add(function () {
+                    scene.beginWeightedAnimation(skeletons[0], 1, 60, 1, false);
+                });
+            }
+
+            var addBedUpButton = function (scene) {
+                var button = new BABYLON.GUI.HolographicButton("reset");
+                panel.addControl(button);
+
+                button.text = "Bed (Up)";
+                button.imageUrl = "../static/babylon/image/bed.png";
+                button.onPointerUpObservable.add(function () {
+                    scene.beginWeightedAnimation(skeletons[0], 60, 120, 1, false);
+                });
+            }
+
+            var addWindowOpenButton = function (scene) {
+                var button = new BABYLON.GUI.HolographicButton("reset");
+                panel.addControl(button);
+
+                button.text = "Windows (Open)";
+                button.imageUrl = "../static/babylon/image/curtains.png";
+                button.onPointerUpObservable.add(function () {
+                    scene.beginWeightedAnimation(skeletons[0], 260, 320, 1, false);
+                });
+            }
+
+            var addWindowCloseButton = function (scene) {
+                var button = new BABYLON.GUI.HolographicButton("reset");
+                panel.addControl(button);
+
+                button.text = "Windows (Close)";
+                button.imageUrl = "../static/babylon/image/curtains.png";
+                button.onPointerUpObservable.add(function () {
+                    scene.beginWeightedAnimation(skeletons[0], 320, 380, 1, false);
+                });
+            }
+
+            panel.blockLayout = true;
+            addScreenLeftButton(scene);
+            addScreenRightButton(scene);
+            addBedUpButton(scene);
+            addBedDownButton(scene);
+            addWindowOpenButton(scene);
+            addWindowCloseButton(scene);
+            panel.blockLayout = false;
+
+            anchor.rotation.y = -Math.PI / 2;
+            anchor.position.x = 0.8;
+            anchor.position.y = 1;
+            anchor.position.z = -4.5;
+
+
+        });
+
+        return scene;
+
+
+    }
+
+    __createScene = createScene;
+
+    var engine = new BABYLON.Engine(canvas, true, {
+        preserveDrawingBuffer: true,
+        stencil: true
+    });
+    var scene = createScene();
+
+    engine.runRenderLoop(function () {
+        if (scene) {
+            scene.render();
+        }
+    });
+
+    // Resize
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
+</script>
+
+<script>
+    var initDashboardPageCharts = function () {
+
+        if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart')
+            .length != 0) {
+            /* ----------========== Daily Sales Chart initialization ==========---------- */
+
+            dataDailySalesChart = {
+                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                series: [
+                    []
+                ]
+            };
+
+            for (var i = 0; i < 7; i++) {
+                dataDailySalesChart.series[0][i] = Math.floor(Math.random() * 40) + 1;
+            }
+
+            optionsDailySalesChart = {
+                lineSmooth: Chartist.Interpolation.cardinal({
+                    tension: 0
+                }),
+                low: 0,
+                high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+                chartPadding: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+            }
+
+            var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart,
+                optionsDailySalesChart);
+
+            md.startAnimationForLineChart(dailySalesChart);
+
+
+        }
+    }
+
+    initDashboardPageCharts();
+
+    setInterval(function () {
+
+        dataDailySalesChart = {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            series: [
+                []
+            ]
+        };
+
+        for (var i = 0; i < 7; i++) {
+            dataDailySalesChart.series[0][i] = Math.floor(Math.random() * 40) + 1;
         }
 
-        __createScene = createScene;
+        optionsDailySalesChart = {
+            lineSmooth: Chartist.Interpolation.cardinal({
+                tension: 0
+            }),
+            low: 0,
+            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            chartPadding: {
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+        }
 
-        var engine = new BABYLON.Engine(canvas, true, {
-            preserveDrawingBuffer: true,
-            stencil: true
-        });
-        var scene = createScene();
+        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart,
+            optionsDailySalesChart);
 
-        engine.runRenderLoop(function () {
-            if (scene) {
-                scene.render();
-            }
-        });
+        md.startAnimationForLineChart(dailySalesChart);
 
-        // Resize
-        window.addEventListener("resize", function () {
-            engine.resize();
+    }, 3000);
+</script>
+
+
+	<script src="../static/babylon/js/jquery-ui-widget.min.js"></script>
+	<script src="../static/babylon/js/d3.min.js"></script>
+
+	<!-- Include jke-d3-ecg and initialize the chart -->
+	<script src="../static/babylon/js/jke-d3-ecg.min.js"></script>
+	<script>
+		$('.jke-ecgChart').ecgChart({
+			
+			height: 200,
+			width: $(".jke-ecgChart").parent().width()
+		
         });
-    </script>
-</body>
+        
+        var _data = [
+	0, 0, 0, 0, 0.0000050048828125, 0.0000137939453125, 0.000049560546875,
+	0.00008740234375, 0.00015966796875, 0.000262451171875, 0.0003975830078125, 0.0005687255859375,
+	0.0007802734375, 0.001037353515625, 0.0013468017578125, 0.00172119140625, 0.0021756591796875,
+	0.0027232666015625, 0.0033880615234375, 0.004206787109375, 0.0052380371093750005,
+	0.006586181640625, 0.008400146484375001, 0.010904296875, 0.0144892578125, 0.0196798095703125, 
+	0.049684204101562504, 0.0886883544921875, 0.11185363769531251, 0.134164306640625,
+	0.137352294921875, 0.1160369873046875, 0.08516308593750001, 0.0539765625, 
+	0.014997436523437501, -0.015882568359375, -0.0387554931640625, -0.06125732421875,
+	-0.0745780029296875, -0.07479357910156251, -0.0725338134765625, -0.0418538818359375,
+	0.08582861328125001, 0.397717529296875, 0.8136408691406251, 1.2295617980957032,
+	0.9944150390625001, 0.2824605712890625, -0.38949267578125, -0.597251220703125,
+	-0.425675537109375, -0.1537947998046875, -0.0500914306640625, -0.0111041259765625,
+	0.0027451171875, 0.0071739501953125, 0.008443359375, 0.0094327392578125, 0.012530517578125,
+	0.0176046142578125, 0.0300162353515625, 0.0433489990234375, 0.056962646484375004,
+	0.0704832763671875, 0.0770511474609375, 0.0898175048828125, 0.10311853027343751,
+	0.117046142578125, 0.1312630615234375, 0.1529300537109375, 0.167607177734375,
+	0.1899068603515625, 0.2124422607421875, 0.235044677734375, 0.2575535888671875,
+	0.2724073486328125, 0.286978271484375, 0.3007579345703125, 0.3067425537109375,
+	0.3106370849609375, 0.303756103515625, 0.2897236328125,0.25916931152343753,
+	0.2200599365234375, 0.1728209228515625, 0.133416259765625, 0.086224853515625,
+	0.05493408203125, 0.02409423828125, 0.00922607421875, -0.0043409423828125,
+	-0.0097349853515625, -0.013127685546875, -0.01423095703125, -0.013834716796875,
+	-0.012556030273437501, -0.010675048828125, -0.00835888671875, 
+	-0.0057305908203125, -0.0000562744140625];
+    
+// Create a data point generator.
+var getDataPoint = (function () {
+	var _x = -1;
+	var _max = _data.length;
+
+	return function () {
+		_x = (_x + 1) % _max;
+		return { x: Date.now(), y: _data[_x] };
+	};
+})();
+
+var heartRate = 60; // bpm
+var interval = 60 * 1000 / (_data.length * heartRate);
+
+// Generate a new data point based on the heart rate.
+setInterval(function () {
+	$('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
+}, interval);
+	</script>
+
+
 
 </html>

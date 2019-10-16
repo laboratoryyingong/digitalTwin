@@ -8,61 +8,784 @@ Exporter version: 6.2.0, Blender version: 2.80 (sub 75)
 		UVs Precision       :  3
 		Vert Color Precision:  3
 		Mat Weight Precision:  2
-		texture directory   :  /Users/MaxYinGonG/Desktop/
+		texture directory   :  /Users/MaxYinGonG/Desktop/blender_model/
 	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
 	processing begun of skeleton:  Armature, id:  0
 		processing begun of bone:  Bone, index:  0
-		processing action ArmatureAction:  in[1 - 60], out[0 - 60]
-		processing action ArmatureAction.001:  in[12 - 13], out[70 - 83]
-		processing action ArmatureAction.002:  in[0 - 1], out[90 - 91]
-		processing action ArmatureAction.003:  in[0 - 1], out[100 - 101]
-		processing action ArmatureAction.004:  in[11 - 12], out[110 - 122]
-		processing action ArmatureAction.005:  in[0 - 1], out[130 - 131]
-		processing action ArmatureAction.006:  in[0 - 1], out[140 - 141]
-		processing action ArmatureAction.007:  in[0 - 1], out[150 - 151]
-		processing action ArmatureAction.008:  in[0 - 1], out[160 - 161]
-		processing action ArmatureAction.009:  in[1 - 60], out[170 - 230]
-		processing action ArmatureAction.010:  in[0 - 1], out[240 - 241]
-		processing action ArmatureAction.011:  in[1 - 60], out[250 - 310]
-	processing begun of camera (UniversalCamera):  Camera
-	processing begun of mesh:  SketchUp
-		processing begun of material:  material.002
-		num positions      :  101
-		num normals        :  101
+		processing begun of bone:  Bone.001, index:  1
+		processing begun of bone:  Bone.002, index:  2
+		processing begun of bone:  Bone.003, index:  3
+		processing action ArmatureAction:  in[1 - 380], out[0 - 380]
+	processing begun of mesh:  windows2
+		processing begun of material:  material
+		processing begun of material:  Tile_Ceramic_Natural_0
+		processing begun of material:  __Beige_3
+		processing begun of material:  __Translucent_Glass_Gray_3
+		processing begun of material:  __Color_002_1
+			processing texture Tile_Ceramic_Natural_0
+				texture type:  diffuseTexture, mapped using: "ID3076"
+		processing begun of multimaterial:  model.Multimaterial#0
+		num positions      :  56
+		num normals        :  56
 		num tangents       :  0
-		num uvs            :  0
+		num uvs            :  112
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  231
-	processing begun of mesh:  SketchUp.001
-		processing begun of material:  Translucent_Glass_Blue.002
-		num positions      :  8
-		num normals        :  8
-		num tangents       :  0
-		num uvs            :  0
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  12
+		num indices        :  108
 		Skeleton stats:  
-			Total Influencers:  8
-			Avg # of influencers per vertex:  1
-			Highest # of influencers observed:  1, num vertices with this:  8
+			Total Influencers:  52
+			Avg # of influencers per vertex:  0.9286
+			Highest # of influencers observed:  1, num vertices with this:  52
 			exported as 1 influencers
-			num skeletonWeights and skeletonIndices:  32
-	processing begun of mesh:  SketchUp.002
-		processing begun of material:  Translucent_Glass_Blue.002
-		registered as also a user of material:  Translucent_Glass_Blue.002
-		num positions      :  8
-		num normals        :  8
+			num skeletonWeights and skeletonIndices:  224
+	processing begun of mesh:  windows_frame
+		processing begun of material:  material
+		processing begun of material:  Tile_Ceramic_Natural_0
+		processing begun of material:  __Beige_3
+		processing begun of material:  __Color_002_1
+		registered as also a user of material:  Tile_Ceramic_Natural_0
+		registered as also a user of material:  __Beige_3
+		registered as also a user of material:  __Color_002_1
+		processing begun of multimaterial:  model.Multimaterial#1
+		num positions      :  89
+		num normals        :  89
+		num tangents       :  0
+		num uvs            :  178
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
+	processing begun of mesh:  windows1
+		processing begun of material:  __Beige_3
+		processing begun of material:  __Translucent_Glass_Gray_3
+		processing begun of material:  material
+		processing begun of material:  __Color_002_1
+		processing begun of material:  Tile_Ceramic_Natural_0
+		registered as also a user of material:  __Translucent_Glass_Gray_3
+		registered as also a user of material:  __Color_002_1
+		registered as also a user of material:  Tile_Ceramic_Natural_0
+		processing begun of multimaterial:  model.Multimaterial#2
+		num positions      :  56
+		num normals        :  56
+		num tangents       :  0
+		num uvs            :  112
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  wall
+		processing begun of material:  material
+		processing begun of material:  __Color_A05_3
+		processing begun of material:  Tile_Ceramic_Natural_0
+		processing begun of material:  __Beige_1
+		registered as also a user of material:  Tile_Ceramic_Natural_0
+			processing texture Beige_1
+				texture type:  diffuseTexture, mapped using: "ID3030"
+		processing begun of multimaterial:  model.Multimaterial#3
+		num positions      :  86
+		num normals        :  86
+		num tangents       :  0
+		num uvs            :  172
+		num uvs2           :  172
+		num colors         :  0
+		num indices        :  162
+	processing begun of mesh:  screen2
+		processing begun of material:  __Color_001_1
+		processing begun of material:  __Color_A05_1
+			processing texture Color_A05_1
+				texture type:  diffuseTexture, mapped using: "ID3150"
+		processing begun of multimaterial:  model.Multimaterial#4
+		num positions      :  108
+		num normals        :  108
+		num tangents       :  0
+		num uvs            :  216
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  support2
+		processing begun of material:  __Beige_2
+		num positions      :  52
+		num normals        :  52
 		num tangents       :  0
 		num uvs            :  0
 		num uvs2           :  0
 		num colors         :  0
+		num indices        :  102
+	processing begun of mesh:  floor
+		processing begun of material:  material
+		processing begun of material:  Tile_Ceramic_Multi
+			processing texture Tile_Ceramic_Multi
+				texture type:  diffuseTexture, mapped using: "ID3187"
+		processing begun of multimaterial:  model.Multimaterial#5
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
 		num indices        :  12
+	processing begun of mesh:  wheel_2
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+		processing begun of material:  mat_4
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID93"
+		processing begun of multimaterial:  model.Multimaterial#6
+		num positions      :  2664
+		num normals        :  2664
+		num tangents       :  0
+		num uvs            :  5328
+		num uvs2           :  5328
+		num colors         :  0
+		num indices        :  3504
+	processing begun of mesh:  wheel_3
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+		processing begun of material:  mat_4
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID141"
+		registered as also a user of material:  mat_1
+		registered as also a user of material:  mat_4
+		processing begun of multimaterial:  model.Multimaterial#7
+		num positions      :  2660
+		num normals        :  2660
+		num tangents       :  0
+		num uvs            :  5320
+		num uvs2           :  5320
+		num colors         :  0
+		num indices        :  3504
+	processing begun of mesh:  wheel_1
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+		processing begun of material:  mat_4
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID149"
+		registered as also a user of material:  mat_1
+		registered as also a user of material:  mat_4
+		processing begun of multimaterial:  model.Multimaterial#8
+		num positions      :  2644
+		num normals        :  2644
+		num tangents       :  0
+		num uvs            :  5288
+		num uvs2           :  5288
+		num colors         :  0
+		num indices        :  3504
+	processing begun of mesh:  wheel_4
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+		processing begun of material:  mat_4
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID157"
+		registered as also a user of material:  mat_1
+		registered as also a user of material:  mat_4
+		processing begun of multimaterial:  model.Multimaterial#9
+		num positions      :  2664
+		num normals        :  2664
+		num tangents       :  0
+		num uvs            :  5328
+		num uvs2           :  5328
+		num colors         :  0
+		num indices        :  3504
+	processing begun of mesh:  bed_5
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID183"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#10
+		num positions      :  409
+		num normals        :  409
+		num tangents       :  0
+		num uvs            :  818
+		num uvs2           :  818
+		num colors         :  0
+		num indices        :  480
+	processing begun of mesh:  bed_4
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID227"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#11
+		num positions      :  596
+		num normals        :  596
+		num tangents       :  0
+		num uvs            :  1192
+		num uvs2           :  1192
+		num colors         :  0
+		num indices        :  720
+	processing begun of mesh:  broad_4
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID237"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#12
+		num positions      :  200
+		num normals        :  200
+		num tangents       :  0
+		num uvs            :  400
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  360
+	processing begun of mesh:  broad_3
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID245"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#13
+		num positions      :  52
+		num normals        :  52
+		num tangents       :  0
+		num uvs            :  104
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  broad_2
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID253"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#14
+		num positions      :  48
+		num normals        :  48
+		num tangents       :  0
+		num uvs            :  96
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  72
+	processing begun of mesh:  broad_1
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID261"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#15
+		num positions      :  306
+		num normals        :  306
+		num tangents       :  0
+		num uvs            :  612
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  360
+		Skeleton stats:  
+			Total Influencers:  252
+			Avg # of influencers per vertex:  0.8235
+			Highest # of influencers observed:  1, num vertices with this:  252
+			exported as 1 influencers
+			num skeletonWeights and skeletonIndices:  1224
+	processing begun of mesh:  bed_foot
+		processing begun of material:  mat_1
+		processing begun of material:  __Beige_4
+		processing begun of multimaterial:  model.Multimaterial#16
+		num positions      :  6734
+		num normals        :  6734
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  7632
+	processing begun of mesh:  bed_top
+		processing begun of material:  mat_1
+		processing begun of material:  __Beige_4
+		registered as also a user of material:  __Beige_4
+		processing begun of multimaterial:  model.Multimaterial#17
+		num positions      :  6738
+		num normals        :  6738
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  7476
+	processing begun of mesh:  bed_6
+		processing begun of material:  Tile_Ceramic_Natural
+		processing begun of material:  mat_1
+			processing texture Tile_Ceramic_Natural
+				texture type:  diffuseTexture, mapped using: "ID349"
+		registered as also a user of material:  mat_1
+		processing begun of multimaterial:  model.Multimaterial#18
+		num positions      :  1874
+		num normals        :  1874
+		num tangents       :  0
+		num uvs            :  3748
+		num uvs2           :  3748
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  bedtop
+		processing begun of material:  __Beige_4
+		processing begun of material:  __Ivory_
+		processing begun of material:  mat_3
+		processing begun of material:  __Snow_
+		processing begun of multimaterial:  model.Multimaterial#19
+		num positions      :  6988
+		num normals        :  6988
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  7626
+	processing begun of mesh:  pole2
+		processing begun of material:  __Beige_5
+		processing begun of material:  Color_A05
+		processing begun of material:  __Black_
+		processing begun of multimaterial:  model.Multimaterial#20
+		num positions      :  416
+		num normals        :  416
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1032
+	processing begun of mesh:  breath1
+		processing begun of material:  Color_B01
+		processing begun of material:  __Black_
+		processing begun of material:  Color_001
+		processing begun of material:  __Translucent_Glass_Gray_4
+		processing begun of material:  __Color_A05_4
+		processing begun of material:  __Color_A02_3
+		processing begun of material:  Color_I03
+		processing begun of material:  __Black_1
+		processing begun of material:  edge_color000255
+		registered as also a user of material:  __Black_
+			processing texture Color_A02_3
+				texture type:  diffuseTexture, mapped using: "ID540"
+		processing begun of multimaterial:  model.Multimaterial#21
+		num positions      :  8975
+		num normals        :  8975
+		num tangents       :  0
+		num uvs            :  17950
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  37158
+	processing begun of mesh:  breath3
+		processing begun of material:  __Color_A05_4
+		processing begun of material:  __Black_1
+		processing begun of material:  __Translucent_Glass_Gray_4
+		processing begun of material:  __Color_A02_3
+		processing begun of material:  Color_B01
+		processing begun of material:  __Black_
+		processing begun of material:  Color_001
+		processing begun of material:  Color_I03
+		processing begun of material:  edge_color000255
+		registered as also a user of material:  __Black_1
+		registered as also a user of material:  __Translucent_Glass_Gray_4
+		registered as also a user of material:  __Color_A02_3
+		registered as also a user of material:  __Black_
+		registered as also a user of material:  Color_001
+		registered as also a user of material:  Color_I03
+		registered as also a user of material:  edge_color000255
+		processing begun of multimaterial:  model.Multimaterial#22
+		num positions      :  8998
+		num normals        :  8998
+		num tangents       :  0
+		num uvs            :  17996
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  37242
+	processing begun of mesh:  breath2
+		processing begun of material:  __Color_A05_4
+		processing begun of material:  __Color_A02_3
+		processing begun of material:  __Translucent_Glass_Gray_4
+		processing begun of material:  Color_B01
+		processing begun of material:  __Black_
+		processing begun of material:  Color_001
+		processing begun of material:  __Black_1
+		processing begun of material:  Color_I03
+		processing begun of material:  edge_color000255
+		registered as also a user of material:  __Color_A02_3
+		registered as also a user of material:  __Translucent_Glass_Gray_4
+		registered as also a user of material:  Color_B01
+		registered as also a user of material:  __Black_
+		registered as also a user of material:  Color_001
+		registered as also a user of material:  __Black_1
+		registered as also a user of material:  Color_I03
+		registered as also a user of material:  edge_color000255
+		processing begun of multimaterial:  model.Multimaterial#23
+		num positions      :  8998
+		num normals        :  8998
+		num tangents       :  0
+		num uvs            :  17996
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  37242
+	processing begun of mesh:  frame_1
+		processing begun of material:  __Color_002_5
+		processing begun of material:  Color_C05
+		processing begun of material:  __Beige_5
+		processing begun of multimaterial:  model.Multimaterial#24
+		num positions      :  860
+		num normals        :  860
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1950
+	processing begun of mesh:  Hook
+		processing begun of material:  __Color_002_5
+		processing begun of material:  Color_C05
+		processing begun of material:  material
+		registered as also a user of material:  Color_C05
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#25
+		num positions      :  1561
+		num normals        :  1561
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4146
+	processing begun of mesh:  screen_1
+		processing begun of material:  Color_C05
+		processing begun of material:  Color_A02
+		processing begun of material:  material
+			processing texture Color_A02
+				texture type:  diffuseTexture, mapped using: "ID1487"
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#26
+		num positions      :  108
+		num normals        :  108
+		num tangents       :  0
+		num uvs            :  216
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  box
+		processing begun of material:  Color_C05
+		processing begun of material:  Color_F06
+		processing begun of material:  Color_001
+		processing begun of material:  Color_E03
+		processing begun of material:  Translucent_Glass_Gray
+		processing begun of material:  material
+		registered as also a user of material:  Color_001
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#27
+		num positions      :  8716
+		num normals        :  8716
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  45588
+	processing begun of mesh:  box_2.001
+		processing begun of material:  Color_C05
+		registered as also a user of material:  Color_C05
+		num positions      :  289
+		num normals        :  289
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  771
+	processing begun of mesh:  box_2
+		processing begun of material:  __Color_002_5
+		processing begun of material:  Color_C05
+		registered as also a user of material:  Color_C05
+		processing begun of multimaterial:  model.Multimaterial#28
+		num positions      :  348
+		num normals        :  348
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  900
+	processing begun of mesh:  screen_2
+		processing begun of material:  Color_A05
+		processing begun of material:  Color_A01
+		processing begun of material:  __Color_002_5
+			processing texture Color_A01
+				texture type:  diffuseTexture, mapped using: "ID1644"
+		processing begun of multimaterial:  model.Multimaterial#29
+		num positions      :  292
+		num normals        :  292
+		num tangents       :  0
+		num uvs            :  584
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  714
+	processing begun of mesh:  support_1
+		processing begun of material:  __Beige_5
+		processing begun of material:  __Charcoal_
+		processing begun of material:  __Color_002_4
+		processing begun of material:  __Color_004_2
+		processing begun of material:  Color_A05
+		processing begun of material:  __Color_002_6
+		processing begun of material:  material
+			processing texture Color_004_2
+				texture type:  diffuseTexture, mapped using: "ID1754"
+		registered as also a user of material:  Color_A05
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#30
+		num positions      :  7831
+		num normals        :  7831
+		num tangents       :  0
+		num uvs            :  15662
+		num uvs2           :  15662
+		num colors         :  0
+		num indices        :  22374
+		WARNING: # of 0 area faces found:  4
+	processing begun of mesh:  tube1
+		processing begun of material:  __Beige_5
+		processing begun of material:  __Black_
+		registered as also a user of material:  __Black_
+		processing begun of multimaterial:  model.Multimaterial#31
+		num positions      :  13363
+		num normals        :  13363
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  71916
+	processing begun of mesh:  pole_3
+		processing begun of material:  __Beige_5
+		registered as also a user of material:  __Beige_5
+		num positions      :  334
+		num normals        :  334
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  786
+	processing begun of mesh:  box4
+		processing begun of material:  __Beige_5
+		processing begun of material:  __DarkGoldenrod_2
+		processing begun of material:  Color_I03
+		processing begun of material:  __Color_002_4
+			processing texture DarkGoldenrod_2
+				texture type:  diffuseTexture, mapped using: "ID2069"
+		registered as also a user of material:  Color_I03
+		registered as also a user of material:  __Color_002_4
+		processing begun of multimaterial:  model.Multimaterial#32
+		num positions      :  466
+		num normals        :  466
+		num tangents       :  0
+		num uvs            :  932
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1200
+	processing begun of mesh:  box1
+		processing begun of material:  __Beige_5
+		processing begun of material:  Color_I03
+		processing begun of material:  __DarkGoldenrod_2
+		processing begun of material:  __Color_002_4
+		registered as also a user of material:  Color_I03
+		registered as also a user of material:  __DarkGoldenrod_2
+		registered as also a user of material:  __Color_002_4
+		processing begun of multimaterial:  model.Multimaterial#33
+		num positions      :  370
+		num normals        :  370
+		num tangents       :  0
+		num uvs            :  740
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  912
+	processing begun of mesh:  box3
+		processing begun of material:  __Beige_5
+		processing begun of material:  __DarkGoldenrod_2
+		processing begun of material:  Color_I03
+		processing begun of material:  __Color_002_4
+		registered as also a user of material:  __DarkGoldenrod_2
+		registered as also a user of material:  Color_I03
+		registered as also a user of material:  __Color_002_4
+		processing begun of multimaterial:  model.Multimaterial#34
+		num positions      :  370
+		num normals        :  370
+		num tangents       :  0
+		num uvs            :  740
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  912
+	processing begun of mesh:  box2
+		processing begun of material:  __Beige_5
+		processing begun of material:  Color_I03
+		processing begun of material:  __DarkGoldenrod_2
+		processing begun of material:  __Color_002_4
+		registered as also a user of material:  Color_I03
+		registered as also a user of material:  __DarkGoldenrod_2
+		registered as also a user of material:  __Color_002_4
+		processing begun of multimaterial:  model.Multimaterial#35
+		num positions      :  370
+		num normals        :  370
+		num tangents       :  0
+		num uvs            :  740
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  912
+	processing begun of mesh:  bottle
+		processing begun of material:  __Beige_2
+		processing begun of material:  __Color_001_1
+		processing begun of material:  Color_B02
+		processing begun of material:  Translucent_Glass_Blue
+		processing begun of material:  Color_007
+		processing begun of material:  Color_001
+		processing begun of material:  Color_C01
+		processing begun of material:  __Black_
+		processing begun of material:  __Translucent_Glass_Gray_1
+		processing begun of material:  Color_003
+		processing begun of material:  Color_A01
+		processing begun of material:  material
+		registered as also a user of material:  Color_001
+		registered as also a user of material:  __Black_
+		registered as also a user of material:  Color_A01
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#36
+		num positions      :  11148
+		num normals        :  11148
+		num tangents       :  0
+		num uvs            :  22296
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  50418
+	processing begun of mesh:  pole_2
+		processing begun of material:  Color_A05
+		registered as also a user of material:  Color_A05
+		num positions      :  186
+		num normals        :  186
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  510
+	processing begun of mesh:  screen_3
+		processing begun of material:  __Color_001_4
+		processing begun of material:  __Color_A01_2
+		processing begun of material:  material
+			processing texture Color_A01_2
+				texture type:  diffuseTexture, mapped using: "ID2566"
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#37
+		num positions      :  93
+		num normals        :  93
+		num tangents       :  0
+		num uvs            :  186
+		num uvs2           :  186
+		num colors         :  0
+		num indices        :  150
+		Skeleton stats:  
+			Total Influencers:  80
+			Avg # of influencers per vertex:  0.8602
+			Highest # of influencers observed:  1, num vertices with this:  80
+			exported as 1 influencers
+			num skeletonWeights and skeletonIndices:  372
+	processing begun of mesh:  pole
+		processing begun of material:  Color_A05
+		registered as also a user of material:  Color_A05
+		num positions      :  144
+		num normals        :  144
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  420
+	processing begun of mesh:  machine1
+		processing begun of material:  Color_000
+		processing begun of material:  __Translucent_Glass_Gray_2
+		processing begun of material:  __Translucent_Glass_Blue_2
+		processing begun of material:  __Color_A02_1
+			processing texture Color_A02_1
+				texture type:  diffuseTexture, mapped using: "ID2691"
+		processing begun of multimaterial:  model.Multimaterial#38
+		num positions      :  3139
+		num normals        :  3139
+		num tangents       :  0
+		num uvs            :  6278
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  14232
+	processing begun of mesh:  pole6
+		processing begun of material:  __Color_001_2
+		processing begun of material:  Color_A05
+		processing begun of material:  material
+		registered as also a user of material:  Color_A05
+		registered as also a user of material:  material
+		processing begun of multimaterial:  model.Multimaterial#39
+		num positions      :  11691
+		num normals        :  11691
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  60444
+	processing begun of mesh:  machine2
+		processing begun of material:  Color_000
+		processing begun of material:  __Color_A02_1
+		processing begun of material:  __Translucent_Glass_Blue_2
+		processing begun of material:  __Translucent_Glass_Gray_2
+		registered as also a user of material:  __Color_A02_1
+		registered as also a user of material:  __Translucent_Glass_Blue_2
+		registered as also a user of material:  __Translucent_Glass_Gray_2
+		processing begun of multimaterial:  model.Multimaterial#40
+		num positions      :  2389
+		num normals        :  2389
+		num tangents       :  0
+		num uvs            :  4778
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  10776
+	processing begun of mesh:  machine3
+		processing begun of material:  Color_000
+		processing begun of material:  __Color_A02_1
+		processing begun of material:  __Translucent_Glass_Blue_2
+		processing begun of material:  __Translucent_Glass_Gray_2
+		registered as also a user of material:  __Color_A02_1
+		registered as also a user of material:  __Translucent_Glass_Blue_2
+		registered as also a user of material:  __Translucent_Glass_Gray_2
+		processing begun of multimaterial:  model.Multimaterial#41
+		num positions      :  2429
+		num normals        :  2429
+		num tangents       :  0
+		num uvs            :  4858
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  10800
 ========= Writing of JSON file started =========
-	writing mesh:  SketchUp
-	writing mesh:  SketchUp.001
-	writing mesh:  SketchUp.002
+	writing mesh:  windows2
+	writing mesh:  windows_frame
+	writing mesh:  windows1
+	writing mesh:  wall
+	writing mesh:  screen2
+	writing mesh:  support2
+	writing mesh:  floor
+	writing mesh:  wheel_2
+	writing mesh:  wheel_3
+	writing mesh:  wheel_1
+	writing mesh:  wheel_4
+	writing mesh:  bed_5
+	writing mesh:  bed_4
+	writing mesh:  broad_4
+	writing mesh:  broad_3
+	writing mesh:  broad_2
+	writing mesh:  broad_1
+	writing mesh:  bed_foot
+	writing mesh:  bed_top
+	writing mesh:  bed_6
+	writing mesh:  bedtop
+	writing mesh:  pole2
+	writing mesh:  breath1
+	writing mesh:  breath3
+	writing mesh:  breath2
+	writing mesh:  frame_1
+	writing mesh:  Hook
+	writing mesh:  screen_1
+	writing mesh:  box
+	writing mesh:  box_2.001
+	writing mesh:  box_2
+	writing mesh:  screen_2
+	writing mesh:  support_1
+	writing mesh:  tube1
+	writing mesh:  pole_3
+	writing mesh:  box4
+	writing mesh:  box1
+	writing mesh:  box3
+	writing mesh:  box2
+	writing mesh:  bottle
+	writing mesh:  pole_2
+	writing mesh:  screen_3
+	writing mesh:  pole
+	writing mesh:  machine1
+	writing mesh:  pole6
+	writing mesh:  machine2
+	writing mesh:  machine3
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.1047 secs
+elapsed time:  0 min, 11.0788 secs
