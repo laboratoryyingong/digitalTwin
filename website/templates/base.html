@@ -112,17 +112,13 @@
                                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
+                                    <span class="notification">1</span>
                                     <p class="d-lg-none d-md-block">
                                         Some Actions
                                     </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                                    <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                                    <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                                    <a class="dropdown-item" href="#">Another Notification</a>
-                                    <a class="dropdown-item" href="#">Another One</a>
+                                    <a class="dropdown-item" href="#">You have 2 new tasks</a>
                                 </div>
                             </li>
                         </ul>
@@ -141,16 +137,13 @@
                                     </div>
                                     <p class="card-category">Indoor humidity</p>
                                     <h3 class="card-title">
-                                        <span>50</span>
-                                        <small>%</small>
-                                        <span> - </span>
-                                        <span>69</span>
+                                        <span id="humidity"></span>
                                         <small>%</small>
                                     </h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">autorenew </i>Updated 1 minute ago ...
+                                        <i class="material-icons">autorenew </i>Updated at <span id="humidity-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +155,14 @@
                                         <i class="material-icons">ac_unit</i>
                                     </div>
                                     <p class="card-category">Indoor Temperature</p>
-                                    <h3 class="card-title">15.2°C</h3>
+                                    <h3 class="card-title">
+                                        <span id="temperature"></span>
+                                        <span>°C</span>
+                                    </h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">date_range</i> Check every minute...
+                                        <i class="material-icons">date_range</i> Check at <span id="temperature-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -175,14 +171,16 @@
                             <div class="card card-stats">
                                 <div class="card-header card-header-danger card-header-icon">
                                     <div class="card-icon">
-                                            <i class="material-icons">directions_walk</i>
+                                            <i class="material-icons">favorite</i>
                                     </div>
-                                    <p class="card-category">Indoor visitor number</p>
-                                    <h3 class="card-title">75</h3>
+                                    <p class="card-category">Patient Heart Beat</p>
+                                    <h3 class="card-title">
+                                        <span id="heart-beat"></span>
+                                    </h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">date_range</i> Check every minute...
+                                        <i class="material-icons">date_range</i> Check at <span id="heart-beat-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -191,14 +189,16 @@
                             <div class="card card-stats">
                                 <div class="card-header card-header-info card-header-icon">
                                     <div class="card-icon">
-                                        <i class="fa fa-twitter"></i>
+                                            <i class="material-icons">face</i>
                                     </div>
-                                    <p class="card-category">Followers</p>
-                                    <h3 class="card-title">+245</h3>
+                                    <p class="card-category">Visitor</p>
+                                    <h3 class="card-title">
+                                        <span id="visitor"></span>
+                                    </h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated
+                                        <i class="material-icons">update</i> Just Updated at <span id="visitor-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -211,10 +211,10 @@
                                     <div class="ct-chart" id="dailySalesChart"></div>
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="card-title">Visitor count</h4>
+                                    <h4 class="card-title">Visitor Count Summary</h4>
                                     <p class="card-category">
                                         <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span>
-                                        increase in today.</p>
+                                        increase in last week.</p>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
@@ -225,7 +225,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card card-chart">
-                                <div class="card-header card-header-warning" >
+                                <div class="card-header card-header-warning">
                                     <!-- <div class="ct-chart" id="websiteViewsChart"></div> -->
                                     <!-- <canvas id="c" width="auto" height="250"></canvas> -->
                                     <div class="jke-ecgChart"></div>
@@ -249,23 +249,11 @@
                                 <div class="card-header card-header-tabs card-header-primary">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title">Tasks:</span>
+                                            <span class="nav-tabs-title"></span>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" href="#profile" data-toggle="tab">
-                                                        <i class="material-icons">bug_report</i> Bugs
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
                                                     <a class="nav-link" href="#messages" data-toggle="tab">
-                                                        <i class="material-icons">code</i> Website
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#settings" data-toggle="tab">
-                                                        <i class="material-icons">cloud</i> Server
+                                                        <i class="material-icons">event_note</i> Event Simulator
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
@@ -275,7 +263,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="profile">
+                                        <div class="tab-pane active" id="messages">
                                             <table class="table">
                                                 <tbody>
                                                     <tr>
@@ -290,67 +278,20 @@
                                                                 </label>
                                                             </div>
                                                         </td>
-                                                        <td>Sign contract for "What are conference organizers afraid
-                                                            of?"</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="">
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Lines From Great Russian Literature? Or E-mails From My
-                                                            Boss?</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="">
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Flooded: One year later, assessing what was lost and what
-                                                            was found when a ravaging rain swept through metro Detroit
+                                                        <td>Press to add/remove one more guest
                                                         </td>
                                                         <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                            <button type="button" rel="tooltip" title="one guest enter"
                                                                 class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
+                                                                <i class="material-icons" id="add-guest" style="font-size: 3em;">
+                                                                        add
+                                                                        </i>
                                                             </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
+                                                            <button type="button" rel="tooltip" title="one quest leave"
                                                                 class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
+                                                                <i class="material-icons" id="remove-guest" style="font-size: 3em;">
+                                                                        remove
+                                                                        </i>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -366,155 +307,20 @@
                                                                 </label>
                                                             </div>
                                                         </td>
-                                                        <td>Create 4 Invisible User Experiences you Never Knew About
+                                                        <td>Press to turn on/turn off lights
                                                         </td>
                                                         <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
+                                                            <button type="button" rel="tooltip" title="turn on light"
                                                                 class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
+                                                                <i class="material-icons" id="turn-on" style="font-size: 3em;">
+                                                                    alarm_on
+                                                                </i>
                                                             </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
+                                                            <button type="button" rel="tooltip" title="turn off light"
                                                                 class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane" id="messages">
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" checked>
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Flooded: One year later, assessing what was lost and what
-                                                            was found when a ravaging rain swept through metro Detroit
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="">
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Sign contract for "What are conference organizers afraid
-                                                            of?"</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane" id="settings">
-                                            <table class="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="">
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Lines From Great Russian Literature? Or E-mails From My
-                                                            Boss?</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" checked>
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Flooded: One year later, assessing what was lost and what
-                                                            was found when a ravaging rain swept through metro Detroit
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" checked>
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Sign contract for "What are conference organizers afraid
-                                                            of?"</td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="Edit Task"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">edit</i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="Remove"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons">close</i>
+                                                                <i class="material-icons" id="turn-off" style="font-size: 3em;">
+                                                                    alarm_off
+                                                                </i>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -558,41 +364,18 @@
                             <div class="card">
                                 <div class="card-header card-header-warning">
                                     <h4 class="card-title">Equipment Status</h4>
-                                    <p class="card-category">15th September, 2016</p>
+                                    <p class="card-category"></p>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table class="table table-hover">
                                         <thead class="text-warning">
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Salary</th>
-                                            <th>Country</th>
+                                            <th>Type</th>
+                                            <th>Subtype</th>
+                                            <th>Position</th>
+                                            <th>Status</th>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>Niger</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Minerva Hooper</td>
-                                                <td>$23,789</td>
-                                                <td>Curaçao</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sage Rodriguez</td>
-                                                <td>$56,142</td>
-                                                <td>Netherlands</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Philip Chaney</td>
-                                                <td>$38,735</td>
-                                                <td>Korea, South</td>
-                                            </tr>
+                                        <tbody id="refresh-status">
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -606,6 +389,105 @@
     </div>
 
 </body>
+
+
+
+<!-- websocket JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script>
+    // socket IO
+    var socket = io('http://192.168.1.204:3000/v1');
+
+    socket.on('connect', function () {
+        console.log('user connected!');
+
+        $.ajax({
+            url: 'http://192.168.1.204:3000/v1/items',
+            type: 'GET',
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+                var id = [];
+                for (var i in data) {
+                    id.push(data[i].id);
+                }
+
+                console.log(id)
+
+                socket.emit('subscribe', {
+                    item: id
+                }); 
+                
+
+                $('#refresh-status').empty();
+
+                for (var i in data) {
+
+                    var isClosed = (data[i].status ===  'closed'|| data[i].status === 'off'|| data[i].status === 'flat');
+
+                    var td1 = isClosed ? (`<span class="badge badge-danger" style="font-size: 1.5em;">` + data[i].status + `<\span>`) : (`<span class="badge badge-success" style="font-size: 1.5em;">` + data[i].status + `<\span>`);
+
+                    var isDirection = (data[i].position ===  'left'|| data[i].position === 'right');
+
+                    var td2 = isDirection ? (`<span class="badge badge-warning" style="font-size: 1.5em;">` + data[i].position  + `<\span>`) : (data[i].position);
+                    $tr = $(`<tr>
+                                <td>` + data[i].type + `</td>
+                                <td>` + data[i].subtype + `</td>
+                                <td>` + td2+ `</td>
+                                <td>` + td1 + `</td>
+                            </tr>
+                            `);
+                    $tr.appendTo("#refresh-status");
+                }          
+                
+            
+            },
+            error: function () {
+                console.error('error')
+            }
+        });
+
+    });
+
+    socket.on('data', function (data) {
+
+        switch (data.id) {
+            case 'b6d34d70-da79-11e9-ac8e-b107e154980d':
+                // humidity
+                $("#humidity").text(data.data.toFixed(2));
+                var date = data.time.split('T')[0];
+                var time = data.time.split('T')[1].split('Z')[0].split('.')[0];
+                $("#humidity-time").text(date + ' ' + time);
+                break;
+            case '0fc254d0-da7a-11e9-82dc-7bba3e37c92c':
+                // temperature
+                $("#temperature").text(data.data.toFixed(2));
+                var date = data.time.split('T')[0];
+                var time = data.time.split('T')[1].split('Z')[0].split('.')[0];
+                $("#temperature-time").text(date + ' ' + time);
+
+                break;
+            case '20f2c5b0-da79-11e9-915e-6f207efb4538':
+                // heart beat
+                $("#heart-beat").text(data.data.toFixed(2));
+                var date = data.time.split('T')[0];
+                var time = data.time.split('T')[1].split('Z')[0].split('.')[0];
+                $("#heart-beat-time").text(date + ' ' + time);
+
+                break;
+            case '9ce852c0-da79-11e9-93d2-677f09344fca':
+                // visitor count
+                $("#visitor").text(data.data.toFixed(0));
+                var date = data.time.split('T')[0];
+                var time = data.time.split('T')[1].split('Z')[0].split('.')[0];
+                $("#visitor-time").text(date + ' ' + time);
+
+                break;
+            default:
+                break;
+        }
+    });
+</script>
 
 <!--   Core JS Files   -->
 <script src="../static/babylon/js/core/jquery.min.js"></script>
@@ -639,13 +521,103 @@
 
 
 <script>
-document.getElementById( "renderCanvas" ).onwheel = function(event){
-    event.preventDefault();
-};
+    document.getElementById("renderCanvas").onwheel = function (event) {
+        event.preventDefault();
+    };
 
-document.getElementById( "renderCanvas" ).onmousewheel = function(event){
-    event.preventDefault();
-};
+    document.getElementById("renderCanvas").onmousewheel = function (event) {
+        event.preventDefault();
+    };
+
+    $("#add-guest").on('click', function(){
+        $.ajax({
+            url: 'http://192.168.1.204:3000/v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/in',
+            type: 'POST',
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+               
+            },
+            error: function () {
+                
+            }
+        });
+
+        var randomNumber = Math.floor(Math.random() * 6) + 1;
+
+        BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", randomNumber + ".babylon", scene, function (meshes,particle, skeletons) {
+            console.log(meshes); 
+            
+            var randomX = (Math.random() * (3 - 5.00) + 5.00).toFixed(4)
+            var randomZ = (Math.random() * (-1.50 - 1.50) + 1.50).toFixed(4);
+
+            meshes[0].setPositionWithLocalVector(new BABYLON.Vector3(randomX, 0, randomZ));
+
+            
+
+        });
+    });
+
+    $("#remove-guest").on('click', function(){
+        $.ajax({
+            url: 'http://192.168.1.204:3000/v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/out',
+            type: 'POST',
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+
+               for(var i in scene.meshes){
+                    if(scene.meshes[i].id === 'p1' || scene.meshes[i].id === 'p2' || scene.meshes[i].id === 'p3' || scene.meshes[i].id === 'p4' || scene.meshes[i].id === 'p5' || scene.meshes[i].id === 'p6' || scene.meshes[i].id === 'p7'){
+                        scene.removeMesh(scene.meshes[i]);
+                        break;
+                    }
+               }
+               
+            },
+            error: function () {
+                
+            }
+        });
+    });
+
+
+
+    setInterval(function(){
+
+        $.ajax({
+            url: 'http://192.168.1.204:3000/v1/items',
+            type: 'GET',
+            crossDomain: true,
+            dataType: 'json',
+            success: function (data) {
+
+                $('#refresh-status').empty();
+
+                for (var i in data) {
+                    var isClosed = (data[i].status ===  'closed'|| data[i].status === 'off'|| data[i].status === 'flat');
+
+                    var td1 = isClosed ? (`<span class="badge badge-danger" style="font-size: 1.5em;">` + data[i].status + `<\span>`) : (`<span class="badge badge-success" style="font-size: 1.5em;">` + data[i].status + `<\span>`);
+
+                    var isDirection = (data[i].position ===  'left'|| data[i].position === 'right');
+
+                    var td2 = isDirection ? (`<span class="badge badge-warning" style="font-size: 1.5em;">` + data[i].position  + `<\span>`) : (data[i].position);
+                    $tr = $(`<tr>
+                                <td>` + data[i].type + `</td>
+                                <td>` + data[i].subtype + `</td>
+                                <td>` + td2+ `</td>
+                                <td>` + td1 + `</td>
+                            </tr>
+                            `);
+                    $tr.appendTo("#refresh-status");
+                }           
+            
+            },
+            error: function () {
+                console.error('error')
+            }
+        });
+        
+    }, 5000);
 </script>
 <script>
     var canvas = document.getElementById("renderCanvas");
@@ -655,6 +627,46 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
         scene.clearColor = new BABYLON.Color3(255, 255, 255);
 
         var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
+
+        // light switch on / off
+        $("#turn-on").on('click', function(){
+            
+            $.ajax({
+                url: 'http://192.168.1.204:3000/v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/on',
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                success: function (data) {
+
+                    light.setEnabled(true);
+                
+                },
+                error: function () {
+                    
+                }
+            });
+
+        });
+
+        $("#turn-off").on('click', function(){
+            
+            $.ajax({
+                url: 'http://192.168.1.204:3000/v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/off',
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                success: function (data) {
+
+                    light.setEnabled(false);
+                
+                },
+                error: function () {
+                    
+                }
+            });
+
+        });
+
 
         // var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(-Math.cos(Math.PI/6), 1 , -Math.sin(Math.PI/6)), new BABYLON.Vector3(0, -1, 0), Math.PI / 2, 1.5, scene);
         var camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 3, Math.PI / 3, 12, BABYLON.Vector3.Zero(),
@@ -672,9 +684,13 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
             // scene.beginWeightedAnimation(skeletons[0], 130, 250, 1, true);
             // scene.beginWeightedAnimation(skeletons[0], 260, 380, 1, true);
 
-            console.log(meshes)
-            console.log(particle)
-            console.log(skeletons)
+            for(var i in meshes){
+
+                if(meshes[i].id === "screen_3"){
+                    console.log(meshes[i])
+                    //meshes[i].material.subMaterials[1].diffuseTexture = new BABYLON.Texture("https://upload.wikimedia.org/wikipedia/commons/8/87/Alaskan_Malamute%2BBlank.png", scene);
+                }
+            }
 
 
             // Create the 3D UI manager
@@ -700,6 +716,20 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
                 button.imageUrl = "../static/babylon/image/monitor.png";
                 button.onPointerUpObservable.add(function () {
                     scene.beginWeightedAnimation(skeletons[0], 130, 180, 1, false);
+
+                    $.ajax({
+                        url: 'http://192.168.1.204:3000/v1/item/101413e0-eeea-11e9-8d64-3b255fbec1f1/left',
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (data) {
+                        
+                        },
+                        error: function () {
+                            
+                        }
+                    });
+
                 });
             }
 
@@ -711,6 +741,20 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
                 button.imageUrl = "../static/babylon/image/monitor.png";
                 button.onPointerUpObservable.add(function () {
                     scene.beginWeightedAnimation(skeletons[0], 180, 250, 1, false);
+
+                    $.ajax({
+                        url: 'http://192.168.1.204:3000/v1/item/101413e0-eeea-11e9-8d64-3b255fbec1f1/right',
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (data) {
+                        
+                        },
+                        error: function () {
+                            
+                        }
+                    });
+
                 });
             }
 
@@ -722,6 +766,19 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
                 button.imageUrl = "../static/babylon/image/bed.png";
                 button.onPointerUpObservable.add(function () {
                     scene.beginWeightedAnimation(skeletons[0], 1, 60, 1, false);
+
+                    $.ajax({
+                        url: 'http://192.168.1.204:3000/v1/item/4cfb33e0-da79-11e9-8ed5-d7e13dc44e81/down',
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (data) {
+                        
+                        },
+                        error: function () {
+                            
+                        }
+                    });
                 });
             }
 
@@ -733,6 +790,19 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
                 button.imageUrl = "../static/babylon/image/bed.png";
                 button.onPointerUpObservable.add(function () {
                     scene.beginWeightedAnimation(skeletons[0], 60, 120, 1, false);
+
+                    $.ajax({
+                        url: 'http://192.168.1.204:3000/v1/item/4cfb33e0-da79-11e9-8ed5-d7e13dc44e81/up',
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (data) {
+                        
+                        },
+                        error: function () {
+                            
+                        }
+                    });
                 });
             }
 
@@ -744,6 +814,19 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
                 button.imageUrl = "../static/babylon/image/curtains.png";
                 button.onPointerUpObservable.add(function () {
                     scene.beginWeightedAnimation(skeletons[0], 260, 320, 1, false);
+
+                    $.ajax({
+                        url: 'http://192.168.1.204:3000/v1/item/f47f60b0-da78-11e9-95b6-e7bfc0739236/open',
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (data) {
+                        
+                        },
+                        error: function () {
+                            
+                        }
+                    });
                 });
             }
 
@@ -755,6 +838,19 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
                 button.imageUrl = "../static/babylon/image/curtains.png";
                 button.onPointerUpObservable.add(function () {
                     scene.beginWeightedAnimation(skeletons[0], 320, 380, 1, false);
+
+                    $.ajax({
+                        url: 'http://192.168.1.204:3000/v1/item/f47f60b0-da78-11e9-95b6-e7bfc0739236/close',
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (data) {
+                        
+                        },
+                        error: function () {
+                            
+                        }
+                    });
                 });
             }
 
@@ -879,64 +975,68 @@ document.getElementById( "renderCanvas" ).onmousewheel = function(event){
 </script>
 
 
-	<script src="../static/babylon/js/jquery-ui-widget.min.js"></script>
-	<script src="../static/babylon/js/d3.min.js"></script>
+<script src="../static/babylon/js/jquery-ui-widget.min.js"></script>
+<script src="../static/babylon/js/d3.min.js"></script>
 
-	<!-- Include jke-d3-ecg and initialize the chart -->
-	<script src="../static/babylon/js/jke-d3-ecg.min.js"></script>
-	<script>
-		$('.jke-ecgChart').ecgChart({
-			
-			height: 200,
-			width: $(".jke-ecgChart").parent().width()
-		
-        });
-        
-        var _data = [
-	0, 0, 0, 0, 0.0000050048828125, 0.0000137939453125, 0.000049560546875,
-	0.00008740234375, 0.00015966796875, 0.000262451171875, 0.0003975830078125, 0.0005687255859375,
-	0.0007802734375, 0.001037353515625, 0.0013468017578125, 0.00172119140625, 0.0021756591796875,
-	0.0027232666015625, 0.0033880615234375, 0.004206787109375, 0.0052380371093750005,
-	0.006586181640625, 0.008400146484375001, 0.010904296875, 0.0144892578125, 0.0196798095703125, 
-	0.049684204101562504, 0.0886883544921875, 0.11185363769531251, 0.134164306640625,
-	0.137352294921875, 0.1160369873046875, 0.08516308593750001, 0.0539765625, 
-	0.014997436523437501, -0.015882568359375, -0.0387554931640625, -0.06125732421875,
-	-0.0745780029296875, -0.07479357910156251, -0.0725338134765625, -0.0418538818359375,
-	0.08582861328125001, 0.397717529296875, 0.8136408691406251, 1.2295617980957032,
-	0.9944150390625001, 0.2824605712890625, -0.38949267578125, -0.597251220703125,
-	-0.425675537109375, -0.1537947998046875, -0.0500914306640625, -0.0111041259765625,
-	0.0027451171875, 0.0071739501953125, 0.008443359375, 0.0094327392578125, 0.012530517578125,
-	0.0176046142578125, 0.0300162353515625, 0.0433489990234375, 0.056962646484375004,
-	0.0704832763671875, 0.0770511474609375, 0.0898175048828125, 0.10311853027343751,
-	0.117046142578125, 0.1312630615234375, 0.1529300537109375, 0.167607177734375,
-	0.1899068603515625, 0.2124422607421875, 0.235044677734375, 0.2575535888671875,
-	0.2724073486328125, 0.286978271484375, 0.3007579345703125, 0.3067425537109375,
-	0.3106370849609375, 0.303756103515625, 0.2897236328125,0.25916931152343753,
-	0.2200599365234375, 0.1728209228515625, 0.133416259765625, 0.086224853515625,
-	0.05493408203125, 0.02409423828125, 0.00922607421875, -0.0043409423828125,
-	-0.0097349853515625, -0.013127685546875, -0.01423095703125, -0.013834716796875,
-	-0.012556030273437501, -0.010675048828125, -0.00835888671875, 
-	-0.0057305908203125, -0.0000562744140625];
-    
-// Create a data point generator.
-var getDataPoint = (function () {
-	var _x = -1;
-	var _max = _data.length;
+<!-- Include jke-d3-ecg and initialize the chart -->
+<script src="../static/babylon/js/jke-d3-ecg.min.js"></script>
+<script>
+    $('.jke-ecgChart').ecgChart({
 
-	return function () {
-		_x = (_x + 1) % _max;
-		return { x: Date.now(), y: _data[_x] };
-	};
-})();
+        height: 150,
+        width: $(".jke-ecgChart").parent().width()
 
-var heartRate = 60; // bpm
-var interval = 60 * 1000 / (_data.length * heartRate);
+    });
 
-// Generate a new data point based on the heart rate.
-setInterval(function () {
-	$('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
-}, interval);
-	</script>
+    var _data = [
+        0, 0, 0, 0, 0.0000050048828125, 0.0000137939453125, 0.000049560546875,
+        0.00008740234375, 0.00015966796875, 0.000262451171875, 0.0003975830078125, 0.0005687255859375,
+        0.0007802734375, 0.001037353515625, 0.0013468017578125, 0.00172119140625, 0.0021756591796875,
+        0.0027232666015625, 0.0033880615234375, 0.004206787109375, 0.0052380371093750005,
+        0.006586181640625, 0.008400146484375001, 0.010904296875, 0.0144892578125, 0.0196798095703125,
+        0.049684204101562504, 0.0886883544921875, 0.11185363769531251, 0.134164306640625,
+        0.137352294921875, 0.1160369873046875, 0.08516308593750001, 0.0539765625,
+        0.014997436523437501, -0.015882568359375, -0.0387554931640625, -0.06125732421875,
+        -0.0745780029296875, -0.07479357910156251, -0.0725338134765625, -0.0418538818359375,
+        0.08582861328125001, 0.397717529296875, 0.8136408691406251, 1.2295617980957032,
+        0.9944150390625001, 0.2824605712890625, -0.38949267578125, -0.597251220703125,
+        -0.425675537109375, -0.1537947998046875, -0.0500914306640625, -0.0111041259765625,
+        0.0027451171875, 0.0071739501953125, 0.008443359375, 0.0094327392578125, 0.012530517578125,
+        0.0176046142578125, 0.0300162353515625, 0.0433489990234375, 0.056962646484375004,
+        0.0704832763671875, 0.0770511474609375, 0.0898175048828125, 0.10311853027343751,
+        0.117046142578125, 0.1312630615234375, 0.1529300537109375, 0.167607177734375,
+        0.1899068603515625, 0.2124422607421875, 0.235044677734375, 0.2575535888671875,
+        0.2724073486328125, 0.286978271484375, 0.3007579345703125, 0.3067425537109375,
+        0.3106370849609375, 0.303756103515625, 0.2897236328125, 0.25916931152343753,
+        0.2200599365234375, 0.1728209228515625, 0.133416259765625, 0.086224853515625,
+        0.05493408203125, 0.02409423828125, 0.00922607421875, -0.0043409423828125,
+        -0.0097349853515625, -0.013127685546875, -0.01423095703125, -0.013834716796875,
+        -0.012556030273437501, -0.010675048828125, -0.00835888671875,
+        -0.0057305908203125, -0.0000562744140625
+    ];
+
+    // Create a data point generator.
+    var getDataPoint = (function () {
+        var _x = -1;
+        var _max = _data.length;
+
+        return function () {
+            _x = (_x + 1) % _max;
+            return {
+                x: Date.now(),
+                y: _data[_x]
+            };
+        };
+    })();
+
+    var heartRate = 60; // bpm
+    var interval = 60 * 1000 / (_data.length * heartRate);
+
+    // Generate a new data point based on the heart rate.
+    setInterval(function () {
+        $('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
+    }, interval);
+</script>
 
 
 

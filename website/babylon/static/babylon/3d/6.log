@@ -1,0 +1,36 @@
+Exporter version: 6.2.0, Blender version: 2.80 (sub 75)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used :
+		inline textures     :  false
+		Material Type       :  PBR
+		Positions Precision :  4
+		Normals Precision   :  3
+		UVs Precision       :  3
+		Vert Color Precision:  3
+		Mat Weight Precision:  2
+		texture directory   :  /Users/MaxYinGonG/Desktop/
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
+	processing begun of mesh:  p6
+		processing begun of material:  __Black_
+		processing begun of material:  material_327
+		processing begun of material:  material_331
+		processing begun of material:  __LightSteelBlue_
+		processing begun of material:  jean_blue
+		processing begun of material:  material_330
+		processing begun of material:  __Burnt_Umber_1
+		processing begun of material:  __Beige_3
+		processing begun of material:  edge_color000255
+		processing begun of multimaterial:  _6.Multimaterial#0
+		num positions      :  766
+		num normals        :  766
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1974
+========= Writing of JSON file started =========
+	writing mesh:  p6
+========= Writing of JSON file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.0425 secs
