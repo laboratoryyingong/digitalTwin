@@ -403,14 +403,15 @@
 <!-- websocket JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 <script>
+    var URL = "http://192.168.1.204:3000/";
     // socket IO
-    var socket = io('http://192.168.1.204:3000/v1');
+    var socket = io(URL + 'v1');
 
     socket.on('connect', function () {
         console.log('user connected!');
 
         $.ajax({
-            url: 'http://192.168.1.204:3000/v1/items',
+            url: URL + 'v1/items',
             type: 'GET',
             crossDomain: true,
             dataType: 'json',
@@ -546,7 +547,7 @@
 
     $("#add-guest").on('click', function () {
         $.ajax({
-            url: 'http://192.168.1.204:3000/v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/in',
+            url: URL + 'v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/in',
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
@@ -576,7 +577,7 @@
 
     $("#remove-guest").on('click', function () {
         $.ajax({
-            url: 'http://192.168.1.204:3000/v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/out',
+            url: URL + 'v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/out',
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
@@ -603,7 +604,7 @@
     setInterval(function () {
 
         $.ajax({
-            url: 'http://192.168.1.204:3000/v1/items',
+            url: URL + 'v1/items',
             type: 'GET',
             crossDomain: true,
             dataType: 'json',
@@ -657,7 +658,7 @@
         $("#turn-on").on('click', function () {
 
             $.ajax({
-                url: 'http://192.168.1.204:3000/v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/on',
+                url: URL + 'v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/on',
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
@@ -676,7 +677,7 @@
         $("#turn-off").on('click', function () {
 
             $.ajax({
-                url: 'http://192.168.1.204:3000/v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/off',
+                url: URL + 'v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/off',
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
@@ -743,7 +744,7 @@
                     scene.beginWeightedAnimation(skeletons[0], 130, 180, 1, false);
 
                     $.ajax({
-                        url: 'http://192.168.1.204:3000/v1/item/101413e0-eeea-11e9-8d64-3b255fbec1f1/left',
+                        url: URL + 'v1/item/101413e0-eeea-11e9-8d64-3b255fbec1f1/left',
                         type: 'POST',
                         crossDomain: true,
                         dataType: 'json',
@@ -768,7 +769,7 @@
                     scene.beginWeightedAnimation(skeletons[0], 180, 250, 1, false);
 
                     $.ajax({
-                        url: 'http://192.168.1.204:3000/v1/item/101413e0-eeea-11e9-8d64-3b255fbec1f1/right',
+                        url: URL + 'v1/item/101413e0-eeea-11e9-8d64-3b255fbec1f1/right',
                         type: 'POST',
                         crossDomain: true,
                         dataType: 'json',
@@ -793,7 +794,7 @@
                     scene.beginWeightedAnimation(skeletons[0], 1, 60, 1, false);
 
                     $.ajax({
-                        url: 'http://192.168.1.204:3000/v1/item/4cfb33e0-da79-11e9-8ed5-d7e13dc44e81/down',
+                        url: URL + 'v1/item/4cfb33e0-da79-11e9-8ed5-d7e13dc44e81/down',
                         type: 'POST',
                         crossDomain: true,
                         dataType: 'json',
@@ -817,7 +818,7 @@
                     scene.beginWeightedAnimation(skeletons[0], 60, 120, 1, false);
 
                     $.ajax({
-                        url: 'http://192.168.1.204:3000/v1/item/4cfb33e0-da79-11e9-8ed5-d7e13dc44e81/up',
+                        url: URL + 'v1/item/4cfb33e0-da79-11e9-8ed5-d7e13dc44e81/up',
                         type: 'POST',
                         crossDomain: true,
                         dataType: 'json',
@@ -841,7 +842,7 @@
                     scene.beginWeightedAnimation(skeletons[0], 260, 320, 1, false);
 
                     $.ajax({
-                        url: 'http://192.168.1.204:3000/v1/item/f47f60b0-da78-11e9-95b6-e7bfc0739236/open',
+                        url: URL + 'v1/item/f47f60b0-da78-11e9-95b6-e7bfc0739236/open',
                         type: 'POST',
                         crossDomain: true,
                         dataType: 'json',
@@ -865,7 +866,7 @@
                     scene.beginWeightedAnimation(skeletons[0], 320, 380, 1, false);
 
                     $.ajax({
-                        url: 'http://192.168.1.204:3000/v1/item/f47f60b0-da78-11e9-95b6-e7bfc0739236/close',
+                        url: URL + 'v1/item/f47f60b0-da78-11e9-95b6-e7bfc0739236/close',
                         type: 'POST',
                         crossDomain: true,
                         dataType: 'json',
