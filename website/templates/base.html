@@ -118,7 +118,7 @@
                                     </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">You have 2 new tasks</a>
+                                    <a class="dropdown-item" href="#">You have 2 new simulator events</a>
                                 </div>
                             </li>
                         </ul>
@@ -143,7 +143,8 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">autorenew </i>Updated at <span id="humidity-time"></span>
+                                        <i class="material-icons">autorenew </i>Updated at <span
+                                            id="humidity-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +163,8 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">date_range</i> Check at <span id="temperature-time"></span>
+                                        <i class="material-icons">date_range</i> Check at <span
+                                            id="temperature-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +173,7 @@
                             <div class="card card-stats">
                                 <div class="card-header card-header-danger card-header-icon">
                                     <div class="card-icon">
-                                            <i class="material-icons">favorite</i>
+                                        <i class="material-icons">favorite</i>
                                     </div>
                                     <p class="card-category">Patient Heart Beat</p>
                                     <h3 class="card-title">
@@ -180,7 +182,8 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">date_range</i> Check at <span id="heart-beat-time"></span>
+                                        <i class="material-icons">date_range</i> Check at <span
+                                            id="heart-beat-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +192,7 @@
                             <div class="card card-stats">
                                 <div class="card-header card-header-info card-header-icon">
                                     <div class="card-icon">
-                                            <i class="material-icons">face</i>
+                                        <i class="material-icons">face</i>
                                     </div>
                                     <p class="card-category">Visitor</p>
                                     <h3 class="card-title">
@@ -198,7 +201,8 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">update</i> Just Updated at <span id="visitor-time"></span>
+                                        <i class="material-icons">update</i> Just Updated at <span
+                                            id="visitor-time"></span>
                                     </div>
                                 </div>
                             </div>
@@ -283,15 +287,17 @@
                                                         <td class="td-actions text-right">
                                                             <button type="button" rel="tooltip" title="one guest enter"
                                                                 class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons" id="add-guest" style="font-size: 3em;">
-                                                                        add
-                                                                        </i>
+                                                                <i class="material-icons" id="add-guest"
+                                                                    style="font-size: 3em;">
+                                                                    add
+                                                                </i>
                                                             </button>
                                                             <button type="button" rel="tooltip" title="one quest leave"
                                                                 class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons" id="remove-guest" style="font-size: 3em;">
-                                                                        remove
-                                                                        </i>
+                                                                <i class="material-icons" id="remove-guest"
+                                                                    style="font-size: 3em;">
+                                                                    remove
+                                                                </i>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -312,13 +318,15 @@
                                                         <td class="td-actions text-right">
                                                             <button type="button" rel="tooltip" title="turn on light"
                                                                 class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons" id="turn-on" style="font-size: 3em;">
+                                                                <i class="material-icons" id="turn-on"
+                                                                    style="font-size: 3em;">
                                                                     alarm_on
                                                                 </i>
                                                             </button>
                                                             <button type="button" rel="tooltip" title="turn off light"
                                                                 class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons" id="turn-off" style="font-size: 3em;">
+                                                                <i class="material-icons" id="turn-off"
+                                                                    style="font-size: 3em;">
                                                                     alarm_off
                                                                 </i>
                                                             </button>
@@ -416,31 +424,38 @@
 
                 socket.emit('subscribe', {
                     item: id
-                }); 
-                
+                });
+
 
                 $('#refresh-status').empty();
 
                 for (var i in data) {
 
-                    var isClosed = (data[i].status ===  'closed'|| data[i].status === 'off'|| data[i].status === 'flat');
+                    var isClosed = (data[i].status === 'closed' || data[i].status === 'off' || data[
+                        i].status === 'flat');
 
-                    var td1 = isClosed ? (`<span class="badge badge-danger" style="font-size: 1.5em;">` + data[i].status + `<\span>`) : (`<span class="badge badge-success" style="font-size: 1.5em;">` + data[i].status + `<\span>`);
+                    var td1 = isClosed ? (
+                        `<span class="badge badge-danger" style="font-size: 1.5em;">` + data[i]
+                        .status + `<\span>`) : (
+                        `<span class="badge badge-success" style="font-size: 1.5em;">` + data[i]
+                        .status + `<\span>`);
 
-                    var isDirection = (data[i].position ===  'left'|| data[i].position === 'right');
+                    var isDirection = (data[i].position === 'left' || data[i].position === 'right');
 
-                    var td2 = isDirection ? (`<span class="badge badge-warning" style="font-size: 1.5em;">` + data[i].position  + `<\span>`) : (data[i].position);
+                    var td2 = isDirection ? (
+                        `<span class="badge badge-warning" style="font-size: 1.5em;">` + data[i]
+                        .position + `<\span>`) : (data[i].position);
                     $tr = $(`<tr>
                                 <td>` + data[i].type + `</td>
                                 <td>` + data[i].subtype + `</td>
-                                <td>` + td2+ `</td>
+                                <td>` + td2 + `</td>
                                 <td>` + td1 + `</td>
                             </tr>
                             `);
                     $tr.appendTo("#refresh-status");
-                }          
-                
-            
+                }
+
+
             },
             error: function () {
                 console.error('error')
@@ -529,36 +544,37 @@
         event.preventDefault();
     };
 
-    $("#add-guest").on('click', function(){
+    $("#add-guest").on('click', function () {
         $.ajax({
             url: 'http://192.168.1.204:3000/v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/in',
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
             success: function (data) {
-               
+
             },
             error: function () {
-                
+
             }
         });
 
         var randomNumber = Math.floor(Math.random() * 6) + 1;
 
-        BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", randomNumber + ".babylon", scene, function (meshes,particle, skeletons) {
-            console.log(meshes); 
-            
+        BABYLON.SceneLoader.ImportMesh("", "../static/babylon/3d/", randomNumber + ".babylon", scene, function (
+            meshes, particle, skeletons) {
+            console.log(meshes);
+
             var randomX = (Math.random() * (3 - 5.00) + 5.00).toFixed(4)
             var randomZ = (Math.random() * (-1.50 - 1.50) + 1.50).toFixed(4);
 
             meshes[0].setPositionWithLocalVector(new BABYLON.Vector3(randomX, 0, randomZ));
 
-            
+
 
         });
     });
 
-    $("#remove-guest").on('click', function(){
+    $("#remove-guest").on('click', function () {
         $.ajax({
             url: 'http://192.168.1.204:3000/v1/item/9ce852c0-da79-11e9-93d2-677f09344fca/out',
             type: 'POST',
@@ -566,23 +582,25 @@
             dataType: 'json',
             success: function (data) {
 
-               for(var i in scene.meshes){
-                    if(scene.meshes[i].id === 'p1' || scene.meshes[i].id === 'p2' || scene.meshes[i].id === 'p3' || scene.meshes[i].id === 'p4' || scene.meshes[i].id === 'p5' || scene.meshes[i].id === 'p6' || scene.meshes[i].id === 'p7'){
+                for (var i in scene.meshes) {
+                    if (scene.meshes[i].id === 'p1' || scene.meshes[i].id === 'p2' || scene.meshes[
+                            i].id === 'p3' || scene.meshes[i].id === 'p4' || scene.meshes[i].id ===
+                        'p5' || scene.meshes[i].id === 'p6' || scene.meshes[i].id === 'p7') {
                         scene.removeMesh(scene.meshes[i]);
                         break;
                     }
-               }
-               
+                }
+
             },
             error: function () {
-                
+
             }
         });
     });
 
 
 
-    setInterval(function(){
+    setInterval(function () {
 
         $.ajax({
             url: 'http://192.168.1.204:3000/v1/items',
@@ -594,29 +612,36 @@
                 $('#refresh-status').empty();
 
                 for (var i in data) {
-                    var isClosed = (data[i].status ===  'closed'|| data[i].status === 'off'|| data[i].status === 'flat');
+                    var isClosed = (data[i].status === 'closed' || data[i].status === 'off' || data[
+                        i].status === 'flat');
 
-                    var td1 = isClosed ? (`<span class="badge badge-danger" style="font-size: 1.5em;">` + data[i].status + `<\span>`) : (`<span class="badge badge-success" style="font-size: 1.5em;">` + data[i].status + `<\span>`);
+                    var td1 = isClosed ? (
+                        `<span class="badge badge-danger" style="font-size: 1.5em;">` + data[i]
+                        .status + `<\span>`) : (
+                        `<span class="badge badge-success" style="font-size: 1.5em;">` + data[i]
+                        .status + `<\span>`);
 
-                    var isDirection = (data[i].position ===  'left'|| data[i].position === 'right');
+                    var isDirection = (data[i].position === 'left' || data[i].position === 'right');
 
-                    var td2 = isDirection ? (`<span class="badge badge-warning" style="font-size: 1.5em;">` + data[i].position  + `<\span>`) : (data[i].position);
+                    var td2 = isDirection ? (
+                        `<span class="badge badge-warning" style="font-size: 1.5em;">` + data[i]
+                        .position + `<\span>`) : (data[i].position);
                     $tr = $(`<tr>
                                 <td>` + data[i].type + `</td>
                                 <td>` + data[i].subtype + `</td>
-                                <td>` + td2+ `</td>
+                                <td>` + td2 + `</td>
                                 <td>` + td1 + `</td>
                             </tr>
                             `);
                     $tr.appendTo("#refresh-status");
-                }           
-            
+                }
+
             },
             error: function () {
                 console.error('error')
             }
         });
-        
+
     }, 5000);
 </script>
 <script>
@@ -629,8 +654,8 @@
         var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
 
         // light switch on / off
-        $("#turn-on").on('click', function(){
-            
+        $("#turn-on").on('click', function () {
+
             $.ajax({
                 url: 'http://192.168.1.204:3000/v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/on',
                 type: 'POST',
@@ -639,17 +664,17 @@
                 success: function (data) {
 
                     light.setEnabled(true);
-                
+
                 },
                 error: function () {
-                    
+
                 }
             });
 
         });
 
-        $("#turn-off").on('click', function(){
-            
+        $("#turn-off").on('click', function () {
+
             $.ajax({
                 url: 'http://192.168.1.204:3000/v1/item/f2fd2310-eee8-11e9-8d64-3b255fbec1f1/off',
                 type: 'POST',
@@ -658,10 +683,10 @@
                 success: function (data) {
 
                     light.setEnabled(false);
-                
+
                 },
                 error: function () {
-                    
+
                 }
             });
 
@@ -684,9 +709,9 @@
             // scene.beginWeightedAnimation(skeletons[0], 130, 250, 1, true);
             // scene.beginWeightedAnimation(skeletons[0], 260, 380, 1, true);
 
-            for(var i in meshes){
+            for (var i in meshes) {
 
-                if(meshes[i].id === "screen_3"){
+                if (meshes[i].id === "screen_3") {
                     console.log(meshes[i])
                     //meshes[i].material.subMaterials[1].diffuseTexture = new BABYLON.Texture("https://upload.wikimedia.org/wikipedia/commons/8/87/Alaskan_Malamute%2BBlank.png", scene);
                 }
@@ -723,10 +748,10 @@
                         crossDomain: true,
                         dataType: 'json',
                         success: function (data) {
-                        
+
                         },
                         error: function () {
-                            
+
                         }
                     });
 
@@ -748,10 +773,10 @@
                         crossDomain: true,
                         dataType: 'json',
                         success: function (data) {
-                        
+
                         },
                         error: function () {
-                            
+
                         }
                     });
 
@@ -773,10 +798,10 @@
                         crossDomain: true,
                         dataType: 'json',
                         success: function (data) {
-                        
+
                         },
                         error: function () {
-                            
+
                         }
                     });
                 });
@@ -797,10 +822,10 @@
                         crossDomain: true,
                         dataType: 'json',
                         success: function (data) {
-                        
+
                         },
                         error: function () {
-                            
+
                         }
                     });
                 });
@@ -821,10 +846,10 @@
                         crossDomain: true,
                         dataType: 'json',
                         success: function (data) {
-                        
+
                         },
                         error: function () {
-                            
+
                         }
                     });
                 });
@@ -845,10 +870,10 @@
                         crossDomain: true,
                         dataType: 'json',
                         success: function (data) {
-                        
+
                         },
                         error: function () {
-                            
+
                         }
                     });
                 });
