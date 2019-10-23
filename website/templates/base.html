@@ -54,6 +54,10 @@
             -webkit-animation-timing-function: linear;
         }
 
+        .card{
+            margin-bottom: 0px !important;
+        }
+
         @-webkit-keyframes linemove {
             from {
                 background-position-x: 0;
@@ -78,32 +82,133 @@
                 <div class="container-fluid">      
 
                     <div class="row">
-                        <div class="col-lg-8 col-md-12">
-                            <div class="card">
-                                <div class="card-header card-header-tabs card-header-primary">
-                                    <div class="nav-tabs-navigation">
-                                        <div class="nav-tabs-wrapper">
-                                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#settings" data-toggle="tab">
-                                                        <i class="material-icons">cloud</i> Digital Twin Main
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="row">
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <div class="card-header card-header-tabs card-header-primary">
+                                            <div class="nav-tabs-navigation">
+                                                <div class="nav-tabs-wrapper">
+                                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#settings" data-toggle="tab">
+                                                                <i class="material-icons">cloud</i> Digital Twin Main
+                                                                <div class="ripple-container"></div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="settings">
-                                            <canvas id="renderCanvas"></canvas>
+                                        <div class="card-body">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="settings">
+                                                    <canvas id="renderCanvas"></canvas>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                    <div class="col-lg">
+                                        <div class="card">
+                                            <div class="card-header card-header-tabs card-header-primary">
+                                                <div class="nav-tabs-navigation">
+                                                    <div class="nav-tabs-wrapper">
+                                                        <span class="nav-tabs-title"></span>
+                                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" href="#messages" data-toggle="tab">
+                                                                    <i class="material-icons">event_note</i> Event Simulator
+                                                                    <div class="ripple-container"></div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="messages">
+                                                        <table class="table" style="margin: 0;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value="" checked>
+                                                                                <span class="form-check-sign">
+                                                                                    <span class="check"></span>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>Press to add/remove one more guest
+                                                                    </td>
+                                                                    <td class="td-actions text-right">
+                                                                        <button type="button" rel="tooltip"
+                                                                            title="one guest enter"
+                                                                            class="btn btn-primary btn-link btn-sm">
+                                                                            <i class="material-icons" id="add-guest"
+                                                                                style="font-size: 3em;">
+                                                                                add
+                                                                            </i>
+                                                                        </button>
+                                                                        <button type="button" rel="tooltip"
+                                                                            title="one quest leave"
+                                                                            class="btn btn-danger btn-link btn-sm">
+                                                                            <i class="material-icons" id="remove-guest"
+                                                                                style="font-size: 3em;">
+                                                                                remove
+                                                                            </i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                                <input class="form-check-input"
+                                                                                    type="checkbox" value="" checked>
+                                                                                <span class="form-check-sign">
+                                                                                    <span class="check"></span>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>Press to turn on/turn off lights
+                                                                    </td>
+                                                                    <td class="td-actions text-right">
+                                                                        <button type="button" rel="tooltip"
+                                                                            title="turn on light"
+                                                                            class="btn btn-primary btn-link btn-sm">
+                                                                            <i class="material-icons" id="turn-on"
+                                                                                style="font-size: 3em;">
+                                                                                alarm_on
+                                                                            </i>
+                                                                        </button>
+                                                                        <button type="button" rel="tooltip"
+                                                                            title="turn off light"
+                                                                            class="btn btn-danger btn-link btn-sm">
+                                                                            <i class="material-icons" id="turn-off"
+                                                                                style="font-size: 3em;">
+                                                                                alarm_off
+                                                                            </i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
-                        <div class="col-lg-4 col-md-12">
+                        <div class="col-lg-3 col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-warning">
                                     <h4 class="card-title">Equipment Status</h4>
@@ -124,205 +229,120 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                    <!-- <div class="card-header card-header-success">
-                                        <div class="nav-tabs-navigation">
-                                            <div class="nav-tabs-wrapper">
-                                                <span class="nav-tabs-title"></span>
-                                                <ul class="nav nav-tabs" data-tabs="tabs">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" data-toggle="tab">
-                                                            <i class="material-icons">list</i> Real-time Status
-                                                            <div class="ripple-container"></div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                        <div class="col-lg-3 col-md-12">
+                            <div class="row">
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <!-- <div class="card-header card-header-success">
+                                                        <div class="nav-tabs-navigation">
+                                                            <div class="nav-tabs-wrapper">
+                                                                <span class="nav-tabs-title"></span>
+                                                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" data-toggle="tab">
+                                                                            <i class="material-icons">list</i> Real-time Status
+                                                                            <div class="ripple-container"></div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table" style="margin: 0;">
+                                                    <thead class=" text-primary">
+
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <i class="material-icons">aspect_ratio</i>
+                                                            </td>
+                                                            <td>
+                                                                Indoor humidity
+                                                            </td>
+                                                            <td>
+                                                                <span id="humidity"></span>
+                                                                <small>%</small>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <i class="material-icons">ac_unit</i>
+                                                            </td>
+                                                            <td>
+                                                                Indoor Temperature
+                                                            </td>
+                                                            <td>
+                                                                <span id="temperature"></span>
+                                                                <span>°C</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <i class="material-icons">favorite</i>
+                                                            </td>
+                                                            <td>
+                                                                Patient Heart Beat
+                                                            </td>
+                                                            <td>
+                                                                <span id="heart-beat"></span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <i class="material-icons">face</i>
+                                                            </td>
+                                                            <td>
+                                                                Visitor
+                                                            </td>
+                                                            <td>
+                                                                <span id="visitor"></span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-                                    </div> -->
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table" style="margin: 0;">
-                                                <thead class=" text-primary">
-                                    
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <i class="material-icons">aspect_ratio</i> 
-                                                        </td>
-                                                        <td>
-                                                            Indoor humidity
-                                                        </td>
-                                                        <td>
-                                                            <span id="humidity"></span>
-                                                            <small>%</small>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <i class="material-icons">ac_unit</i>
-                                                        </td>
-                                                        <td>
-                                                            Indoor Temperature
-                                                        </td>
-                                                        <td>
-                                                            <span id="temperature"></span>
-                                                            <span>°C</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <i class="material-icons">favorite</i>
-                                                        </td>
-                                                        <td>
-                                                            Patient Heart Beat
-                                                        </td>
-                                                        <td>
-                                                            <span id="heart-beat"></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <i class="material-icons">face</i>
-                                                        </td>
-                                                        <td>
-                                                            Visitor
-                                                        </td>
-                                                        <td>
-                                                            <span id="visitor"></span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <!-- <div class="card-footer">
+                                                        <div class="stats">
+                                                            <i class="material-icons">autorenew </i>Updated at <span
+                                                                id="humidity-time"></span>
+                                                        </div>
+                                                    </div> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg">
+                                    <div class="card card-chart">
+                                        <div class="card-header card-header-danger">
+                                            <!-- <div class="ct-chart" id="websiteViewsChart"></div> -->
+                                            <!-- <canvas id="c" width="auto" height="250"></canvas> -->
+                                            <div class="jke-ecgChart"></div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Cardiogram</h4>
+                                            <p class="card-category">
+                                                <span class="text-warning"><i class="fa fa-long-arrow-down"></i> 5%
+                                                </span>
+                                                increase in last minute.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <i class="material-icons">access_time</i> Update one second ago
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="card-footer">
-                                        <div class="stats">
-                                            <i class="material-icons">autorenew </i>Updated at <span
-                                                id="humidity-time"></span>
-                                        </div>
-                                    </div> -->
                                 </div>
+                            </div>
+
 
                         </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card card-chart">
-                                <div class="card-header card-header-danger">
-                                    <!-- <div class="ct-chart" id="websiteViewsChart"></div> -->
-                                    <!-- <canvas id="c" width="auto" height="250"></canvas> -->
-                                    <div class="jke-ecgChart"></div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">Cardiogram</h4>
-                                    <p class="card-category">
-                                        <span class="text-warning"><i class="fa fa-long-arrow-down"></i> 5% </span>
-                                        increase in last minute.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons">access_time</i> Update one second ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header card-header-tabs card-header-primary">
-                                    <div class="nav-tabs-navigation">
-                                        <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title"></span>
-                                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#messages" data-toggle="tab">
-                                                        <i class="material-icons">event_note</i> Event Simulator
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="messages">
-                                            <table class="table" style="margin: 0;">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" checked>
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Press to add/remove one more guest
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="one guest enter"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons" id="add-guest"
-                                                                    style="font-size: 3em;">
-                                                                    add
-                                                                </i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="one quest leave"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons" id="remove-guest"
-                                                                    style="font-size: 3em;">
-                                                                    remove
-                                                                </i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        value="" checked>
-                                                                    <span class="form-check-sign">
-                                                                        <span class="check"></span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
-                                                        </td>
-                                                        <td>Press to turn on/turn off lights
-                                                        </td>
-                                                        <td class="td-actions text-right">
-                                                            <button type="button" rel="tooltip" title="turn on light"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons" id="turn-on"
-                                                                    style="font-size: 3em;">
-                                                                    alarm_on
-                                                                </i>
-                                                            </button>
-                                                            <button type="button" rel="tooltip" title="turn off light"
-                                                                class="btn btn-danger btn-link btn-sm">
-                                                                <i class="material-icons" id="turn-off"
-                                                                    style="font-size: 3em;">
-                                                                    alarm_off
-                                                                </i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
