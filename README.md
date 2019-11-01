@@ -13,3 +13,6 @@ $ python manage.py runserver
 
 # collect static
 $ python manage.py collectstatic
+
+# Demo websit
+[DigitalTwin Demo](https://digitaltwin.argsen.com)
